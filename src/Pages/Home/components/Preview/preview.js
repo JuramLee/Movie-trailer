@@ -1,4 +1,4 @@
-import HoverMovieCard from 'components/Card/Card';
+import MovieCard from 'components/Card/Card';
 import { useNavigate } from 'react-router';
 
 import styled from 'styled-components';
@@ -11,12 +11,12 @@ const Preview = ({ data, word, nav, isLoading }) => {
 	return (
 		<S.Wrapper>
 			<S.Bar>
-				<span style={{ color: 'white', fontSize: '20px' }}>{word}</span>
-				<S.Button onClick={() => navigate(`/movie/${nav}`)}>more &gt;</S.Button>
+				<span style={{ color: 'white', fontSize: '30px' }}>{word}</span>
+				<S.Button onClick={() => navigate(`/movie/${nav}`)}>MORE &gt;</S.Button>
 			</S.Bar>
 			<S.Cards>
 				{top4 ? (
-					top4.map(item => <HoverMovieCard movie={item} key={item.id} />)
+					top4.map(item => <MovieCard movie={item} key={item.id} />)
 				) : (
 					<Skeleton variant="rectangular" width={'1200px'} height={'450px'} />
 				)}
@@ -28,21 +28,18 @@ const Preview = ({ data, word, nav, isLoading }) => {
 export default Preview;
 
 const Wrapper = styled.div`
-	width: 80%;
+	width: 100%;
+	min-width: 350px;
+	max-width: 1200px;
 	margin: 0 auto;
 	background-color: black;
-	@media (max-width: 768px) {
-		width: 80%;
-	}
-	@media (max-width: 1024px) {
-		width: 80%;
-	}
+	border: 1px solid red;
 `;
 
 const Bar = styled.div`
 	width: 100%;
 	${flexSpaceBetween}
-	padding: 5px 20px;
+	padding: 5px 10px;
 	> button {
 		border: none;
 		padding: 10px 15px;
@@ -51,7 +48,7 @@ const Bar = styled.div`
 `;
 
 const Button = styled.button`
-	font-size: large;
+	font-size: 20px;
 	color: white;
 	background: none;
 	:hover {
@@ -62,7 +59,7 @@ const Button = styled.button`
 const Cards = styled.div`
 	${flexSpaceBetween}
 	padding-bottom: 50px;
-	gap: 10px;
+	/* gap: 10px; */
 `;
 
 const S = {

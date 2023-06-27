@@ -33,5 +33,5 @@ export default MoviePreviewCard;
 
 const Wrapper = styled.div`
 	background-color: black;
-	min-width: 768px;
+	/* min-width: 768px; */
 `;

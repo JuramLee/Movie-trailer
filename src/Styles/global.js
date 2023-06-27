@@ -6,14 +6,14 @@ const GlobalStyles = createGlobalStyle`
     *{
         box-sizing: border-box;
         @font-face {
-		font-family: 'KCC';
-		src: url('/Assets/Goyang.ttf');
+		font-family: 'Akatab';
+		src: url('/Assets/Font/Akatab-Regular.ttf');
 	    }
-        font-family: 'KCC';
+        font-family: 'Akatab';
     }
     body{
        
-        font-family: 'KCC';
+        font-family: 'Akatab';
     }
 `;
 export default GlobalStyles;

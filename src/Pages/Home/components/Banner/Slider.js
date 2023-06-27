@@ -26,7 +26,7 @@ const MovieSlider = ({ data }) => {
 						clickable: true,
 					}}
 					modules={[Pagination, Autoplay]}
-					autoplay={{ delay: 1500 }}
+					autoplay={{ delay: 2500, disableOnInteraction: false }}
 				>
 					{top4.map((src, index) => {
 						return (
@@ -63,7 +63,7 @@ const Wrapper = styled.div`
 `;
 
 const SwiperWrapper = styled.div`
-	width: 80%;
+	width: 70%;
 	margin: 0 auto;
 	padding: 0px 20px;
 `;
@@ -80,13 +80,13 @@ const SlideContent = styled.div`
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.5);
-	top: 50%;
+	/* top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%); */
 	z-index: 1;
 	display: flex;
 	flex-direction: column;
-	padding: 180px 80px;
+	padding: 180px 100px;
 	color: white;
 	@media (max-width: 768px) {
 		padding: 100px 20px;
@@ -95,9 +95,10 @@ const SlideContent = styled.div`
 
 const Title = styled.div`
 	width: 100%;
-	font-size: 3rem;
+
+	font-size: 2rem;
 	font-weight: bolder;
-	margin-bottom: 2.5rem;
+	margin-bottom: 20px;
 	background-color: none;
 	@media (max-width: 768px) {
 		font-size: 1.5rem;
@@ -106,7 +107,8 @@ const Title = styled.div`
 
 const Overview = styled.p`
 	width: 50%;
-	font-size: 1.5rem;
+	min-height: 180px;
+	font-size: 1.4rem;
 	font-weight: lighter;
 	line-height: 30px;
 	overflow: hidden;
