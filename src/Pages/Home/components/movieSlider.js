@@ -12,6 +12,5 @@ export default MoviePreviewSlider;
 
 const Wrapper = styled.div`
 	background-color: black;
-	min-width: 768px;
 	padding-bottom: 100px;
 `;
