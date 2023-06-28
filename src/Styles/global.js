@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Akatab';
     }
     body{
-       
+       background-color: black;
         font-family: 'Akatab';
     }
 `;

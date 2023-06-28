@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 import { flexSpaceBetween } from 'Styles/common';
 
-const Preview = ({ data, word, nav, isLoading }) => {
+const Preview = ({ data, word, nav }) => {
 	const navigate = useNavigate();
 	const top4 = data && data.data.results.slice(0, 4);
 
@@ -33,7 +33,6 @@ const Wrapper = styled.div`
 	max-width: 1200px;
 	margin: 0 auto;
 	background-color: black;
-	border: 1px solid red;
 `;
 
 const Bar = styled.div`

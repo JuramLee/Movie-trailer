@@ -1,5 +1,6 @@
 import MoviePreviewCard from './components/movieCard';
 import MoviePreviewSlider from './components/movieSlider';
+import styled from 'styled-components';
 
 const HomePage = () => {
 	return (
