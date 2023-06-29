@@ -8,10 +8,12 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { useNavigate } from 'react-router-dom';
 
 const IMG_BASE_URL = IMAGE_URL(1280);
 
 const MovieSlider = ({ data }) => {
+	const navigate = useNavigate();
 	const top4 = data?.data.results.slice(0, 4) || [];
 
 	return (
@@ -31,13 +33,12 @@ const MovieSlider = ({ data }) => {
 					{top4.map((src, index) => {
 						return (
 							<S.StyledSwiper key={src.id}>
-								<SwiperSlide>
+								<SwiperSlide onClick={() => navigate(`/detail/${src.id}`)}>
 									<SlideContent>
 										<Title>{src.title}</Title>
 										<Overview>{src.overview}</Overview>
 									</SlideContent>
 									<SlideImage
-										key={src.id}
 										src={`${IMG_BASE_URL}/${src.backdrop_path}`}
 										alt={src.title}
 									/>
@@ -75,6 +76,7 @@ const StyledSwiper = styled.div`
 `;
 
 const SlideContent = styled.div`
+	cursor: pointer;
 	position: absolute;
 	width: 100%;
 	height: 100%;

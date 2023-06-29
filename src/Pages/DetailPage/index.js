@@ -9,8 +9,8 @@ function DetailPage() {
 
 	return (
 		<>
-			<DetailVideo id={id} />
 			<DetailInfo id={id} />
+			<DetailVideo id={id} />
 		</>
 	);
 }
