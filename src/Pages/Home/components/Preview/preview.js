@@ -1,4 +1,5 @@
 import MovieCard from 'components/Card/Card';
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router';
 
 import styled from 'styled-components';
@@ -11,8 +12,15 @@ const Preview = ({ data, word, nav }) => {
 	return (
 		<S.Wrapper>
 			<S.Bar>
-				<span style={{ color: 'white', fontSize: '30px' }}>{word}</span>
-				<S.Button onClick={() => navigate(`/movie/${nav}`)}>MORE &gt;</S.Button>
+				<span style={{ color: 'white' }}>{word}</span>
+				<S.Button
+					as={motion.button}
+					whileHover={{ scale: 1.05 }}
+					whileTap={{ scale: 1 }}
+					onClick={() => navigate(`/movie/${nav}`)}
+				>
+					MORE &gt;
+				</S.Button>
 			</S.Bar>
 			<S.Cards>
 				{top4 ? (
@@ -39,26 +47,36 @@ const Bar = styled.div`
 	width: 100%;
 	${flexSpaceBetween}
 	padding: 5px 10px;
+	font-size: 30px;
 	> button {
 		border: none;
 		padding: 10px 15px;
 		border-radius: 10px;
+		font-size: 30px;
+		@media (max-width: 850px) {
+			font-size: 25px;
+		}
+		@media (max-width: 550px) {
+			font-size: 18px;
+		}
+	}
+	@media (max-width: 850px) {
+		font-size: 25px;
+	}
+	@media (max-width: 550px) {
+		font-size: 18px;
 	}
 `;
 
-const Button = styled.button`
+const Button = styled(motion.button)`
 	font-size: 20px;
 	color: white;
 	background: none;
-	:hover {
-		background-color: rgba(255, 255, 255, 0.1);
-	}
 `;
 
 const Cards = styled.div`
 	${flexSpaceBetween}
 	padding-bottom: 50px;
-	/* gap: 10px; */
 `;
 
 const S = {

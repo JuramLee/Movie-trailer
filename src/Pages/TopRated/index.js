@@ -55,11 +55,13 @@ const Container = styled.div`
 const Title = styled.div`
 	font-weight: bold;
 	font-size: 30px;
+	margin-bottom: 20px;
 `;
 
 const Card = styled.div`
-	width: 90%;
 	display: flex;
+	/* align-items: center; */
+	justify-content: space-between;
 	flex-wrap: wrap;
 	flex-basis: 0px;
 `;

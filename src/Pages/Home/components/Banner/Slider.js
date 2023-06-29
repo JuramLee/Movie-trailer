@@ -111,7 +111,6 @@ const Title = styled.div`
 
 const Overview = styled.p`
 	width: 50%;
-	/* min-height: 80px; */
 	font-size: 1.4rem;
 	font-weight: lighter;
 	line-height: 30px;

@@ -43,6 +43,7 @@ export default MovieCard;
 const Wrapper = styled.div`
 	display: flex;
 	flex: 1;
+	margin-bottom: 10px;
 `;
 
 const Container = styled.div`
@@ -195,21 +196,30 @@ const MovieTitle = styled.h3`
 	@media (max-width: 640px) {
 		font-size: 11px;
 		margin-bottom: 6px;
-	}
-	@media (max-width: 590px) {
-		font-size: 8px;
-	}
-	@media (max-width: 490px) {
 		overflow: hidden;
 		text-overflow: ellipsis;
 		display: -webkit-box;
 		-webkit-line-clamp: 2;
 		-webkit-box-orient: vertical;
+		width: 100px;
+	}
+	@media (max-width: 590px) {
+		font-size: 8px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		width: 90px;
+	}
+	@media (max-width: 490px) {
 		width: 65px;
 		font-size: 5px;
 	}
 	@media (max-width: 415px) {
 		font-size: 4px;
+		-webkit-line-clamp: 1;
+		width: 50px;
 	}
 `;
 
