@@ -12,6 +12,7 @@ const HomePage = () => {
 };
 
 export default HomePage;
+//테스트
 
 const Wrapper = styled.div`
 	min-width: 350px;
