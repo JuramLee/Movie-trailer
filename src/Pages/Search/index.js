@@ -1,4 +1,3 @@
-import ScrollUpBtn from 'components/Layout/ScrollUp/scrollup';
 import styled from 'styled-components';
 import SearchSkeleton from './components/searchSkeleton';
 import SearchedMovies from './components/searchedMovies';
@@ -46,7 +45,6 @@ function SearchPage() {
 					: blank.map(() => <SearchSkeleton />)}
 				{isFetchingNextPage ? blank.map(() => <SearchSkeleton />) : ''}
 				<div ref={ref}></div>
-				<ScrollUpBtn />
 			</Container>
 		</Wrapper>
 	);

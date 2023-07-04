@@ -1,93 +1,72 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { flexAlignCenter } from 'Styles/common';
+
+const contributors = [
+	{ username: 'Hyunseo', url: 'https://github.com/HyunseoKoo' },
+	{ username: 'Nasil', url: 'https://github.com/nasilKiM' },
+	{ username: 'Juram', url: 'https://github.com/JuramLee' },
+	{ username: 'Jaehoon', url: 'https://github.com/JaeHoonKOR' },
+	{ username: 'YoungSeung', url: 'https://github.com/YoungSeungJang' },
+];
 
 const BasicFooter = () => {
 	return (
-		<S.Wrapper>
-			<S.Container>
-				<S.Content>
-					<div>used OPEN_API</div>
-					<Link
-						to={'https://developers.themoviedb.org/3/movies/get-movie-details'}
-					>
-						[Link]
-					</Link>
-				</S.Content>
-				<S.Content>
-					<div>our Github</div>
-					<Link to={'https://github.com/Frontend-TEAM1'}> [Link]</Link>
-				</S.Content>
-			</S.Container>
-			<S.Container>
-				<div>Member's Github</div>
-				<S.Content>
-					<div>Hyunseo Koo</div>
-					<Link to={'https://github.com/HyunseoKoo'}> [Link]</Link>
-				</S.Content>
-				<S.Content>
-					<div>Nasil Kim</div>
-					<Link to={'https://github.com/nasilKiM'}> [Link]</Link>
-				</S.Content>
-				<S.Content>
-					<div>JaeHoon Lee</div>
-					<Link to={'https://github.com/JaeHoonKOR'}> [Link]</Link>
-				</S.Content>
-				<S.Content>
-					<div>Juram Lee</div>
-					<Link to={'https://github.com/JuramLee'}> [Link]</Link>
-				</S.Content>
-				<S.Content>
-					<div>YoungSeung Jang</div>
-					<Link to={'https://github.com/YoungSeungJang'}> [Link]</Link>
-				</S.Content>
-			</S.Container>
-			<img src="/Assets/footerImg.png" />
-		</S.Wrapper>
+		<>
+			<S.Wrapper>
+				<FooterText>PROJECT CONTRIBUTORS:</FooterText>
+				<FooterLinkList>
+					{contributors.map(contributor => (
+						<FooterLinkItem key={contributor.username}>
+							<FooterLink href={contributor.url}>
+								{contributor.username}
+							</FooterLink>
+						</FooterLinkItem>
+					))}
+				</FooterLinkList>
+			</S.Wrapper>
+			;
+		</>
 	);
 };
 
 export default BasicFooter;
 
 const Wrapper = styled.div`
-	width: 100%;
-	padding: 80px 100px 40px 100px;
-	background-color: black;
-	${flexAlignCenter}
-	> div {
-		color: white;
-		@media (max-width: 768px) {
-			font-size: 0.8rem;
-		}
-	}
-	> img {
-		height: 200px;
-		position: absolute;
-		right: 100px;
-		@media (max-width: 768px) {
-			height: 100px;
-		}
-	}
+	height: 150px;
+	min-width: 350px;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 50px 0;
+	color: white;
+	text-align: center;
 `;
 
-const Container = styled.div`
-	width: 30%;
-	height: 200px;
-	line-height: 30px;
-	@media (max-width: 768px) {
-		margin: 0 20px;
-	}
+const FooterText = styled.p`
+	font-size: 18px;
+	font-weight: 700;
+	margin: 0;
 `;
 
-const Content = styled.div`
-	${flexAlignCenter}
-	@media (max-width: 768px) {
-		font-size: 0.8rem;
+const FooterLinkList = styled.ul`
+	list-style-type: none;
+	font-size: 18px;
+	padding: 0;
+	margin-top: 15px;
+`;
+
+const FooterLinkItem = styled.li`
+	display: inline-block;
+	margin: 0 10px;
+`;
+
+const FooterLink = styled.a`
+	color: #333;
+	text-decoration: none;
+
+	&:hover {
+		color: #ff69b4;
 	}
 `;
 
 const S = {
 	Wrapper,
-	Container,
-	Content,
 };

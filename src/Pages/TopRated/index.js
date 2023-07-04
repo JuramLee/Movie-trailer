@@ -1,5 +1,4 @@
 import MovieCard from 'components/Card/Card';
-import ScrollUpBtn from 'components/Layout/ScrollUp/scrollup';
 import { useInfiniteTopRated } from 'hooks/queries/get-infinite-movieList';
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
@@ -32,7 +31,6 @@ const TopRatedList = () => {
 					})}
 				</S.Card>
 			</S.Container>
-			<ScrollUpBtn />
 			<div ref={ref}></div>
 		</S.Wrapper>
 	);

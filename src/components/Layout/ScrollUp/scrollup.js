@@ -77,6 +77,10 @@ const Icon = styled(motion.button)`
 	> img {
 		width: 35px;
 	}
+	@media (max-width: 650px) {
+		width: 90%;
+		padding: 20px 0;
+	}
 `;
 
 const S = {

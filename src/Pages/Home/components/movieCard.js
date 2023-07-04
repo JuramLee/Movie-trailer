@@ -1,4 +1,3 @@
-import ScrollUpBtn from 'components/Layout/ScrollUp/scrollup';
 import styled from 'styled-components';
 import Preview from './Preview/preview';
 import {
@@ -23,7 +22,6 @@ const MoviePreviewCard = () => {
 			{upComing && (
 				<Preview data={upComing} word={'Up coming'} nav={'upcoming'} />
 			)}
-			<ScrollUpBtn />
 		</Wrapper>
 	);
 };

@@ -1,5 +1,4 @@
 import MovieCard from 'components/Card/Card';
-import ScrollUpBtn from 'components/Layout/ScrollUp/scrollup';
 import { useInfiniteNowPlay } from 'hooks/queries/get-infinite-movieList';
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
@@ -31,8 +30,6 @@ const NowPlayList = () => {
 					})}
 				</S.Card>
 			</S.Container>
-
-			<ScrollUpBtn />
 			<div ref={ref}></div>
 		</S.Wrapper>
 	);
@@ -58,7 +55,7 @@ const Title = styled.div`
 `;
 
 const Card = styled.div`
-	width: 90%;
+	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	flex-basis: 0px;
