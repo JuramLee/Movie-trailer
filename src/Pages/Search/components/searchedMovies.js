@@ -17,9 +17,9 @@ function SearchedMovies({ movie }) {
 		const releaseDate = new Date(movie.release_date);
 		const currentDate = new Date();
 		if (releaseDate > currentDate) {
-			score = `It will be released on ${movie.release_date} .`;
+			score = `It will be released on ${movie.release_date}`;
 		} else {
-			score = 'Sorry, there are not enough rating data yet.';
+			score = 'Sorry, there are not enough rating data yet';
 		}
 	}
 
@@ -57,36 +57,89 @@ export default SearchedMovies;
 const Wrapper = styled.div`
 	color: white;
 	background-color: black;
-	height: 40vh;
 	list-style: none;
 	margin: 0;
-	padding: 50px;
+	padding: 30px;
 	border: 1px double grey;
 	border-radius: 20px;
 	display: flex;
+	align-items: center;
 	justify-content: center;
 	margin-top: 30px;
+	min-width: 260px;
 `;
 
 const Poster = styled.div`
 	width: 230px;
 	height: 300px;
+	min-width: 80px;
+	margin-right: 20px;
+	@media (max-width: 1500px) {
+		width: 210px;
+		height: 290px;
+	}
+	@media (max-width: 1500px) {
+		width: 210px;
+		height: 260px;
+	}
+	@media (max-width: 1000px) {
+		width: 210px;
+		height: 230px;
+	}
+	@media (max-width: 900px) {
+		width: 190px;
+		height: 210px;
+	}
+	@media (max-width: 810px) {
+		width: 190px;
+		height: 200px;
+	}
+	@media (max-width: 750px) {
+		width: 150px;
+		height: 160px;
+	}
+	@media (max-width: 680px) {
+		width: 110px;
+		height: 120px;
+	}
 `;
 
 const Info = styled.div`
 	width: 80%;
-	height: 100%;
-	padding: 50px;
+	/* height: 100%; */
+	/* padding: 50px; */
 `;
+
 const Top = styled.div`
 	${flexAlignCenter}
-	margin-bottom: 30px;
+	margin-bottom: 20px;
+	@media (max-width: 680px) {
+		margin-bottom: 5px;
+	}
 `;
+
 const Title = styled.div`
-	height: 100%;
+	width: 100%;
+	min-width: 30px;
 	font-weight: 900;
 	font-size: 30px;
 	margin-right: 20px;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	@media (max-width: 1300px) {
+		font-weight: 800;
+		font-size: 25px;
+	}
+	@media (max-width: 1000px) {
+		font-weight: 700;
+		font-size: 20px;
+	}
+	@media (max-width: 680px) {
+		font-weight: 700;
+		font-size: 15px;
+	}
 `;
 
 const Preview = styled.div`
@@ -98,10 +151,35 @@ const Preview = styled.div`
 	display: -webkit-box;
 	-webkit-line-clamp: 4;
 	-webkit-box-orient: vertical;
+	@media (max-width: 1300px) {
+		font-size: 18px;
+		line-height: 25px;
+	}
+	@media (max-width: 1000px) {
+		font-size: 16px;
+		line-height: 23px;
+	}
+	@media (max-width: 800px) {
+		font-size: 14px;
+		line-height: 20px;
+	}
+	@media (max-width: 680px) {
+		font-size: 10px;
+		line-height: 15px;
+	}
 `;
+
 const Score = styled.div`
-	width: 60%;
-	height: 100%;
+	width: 100%;
 	display: flex;
 	align-items: center;
+	@media (max-width: 700px) {
+		font-size: 0.8rem;
+	}
+	@media (max-width: 540px) {
+		font-size: 0.4rem;
+	}
+	@media (max-width: 485px) {
+		font-size: 0.3rem;
+	}
 `;

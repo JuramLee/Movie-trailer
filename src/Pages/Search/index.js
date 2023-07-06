@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import { useInfiniteSearch } from 'hooks/queries/get-infinite-movieList';
+import SearchBar from 'components/Layout/Header/search';
 
 function SearchPage() {
 	const location = useLocation();
@@ -22,15 +23,15 @@ function SearchPage() {
 		}
 		fetchNextPage();
 	}, [inView]);
-	console.log(isFetchingNextPage);
 
 	return (
 		<Wrapper>
 			<Container>
+				<SearchBar />
 				{searchResults && searchResults.pages[0].data.results.length === 0 ? (
-					<span>No result of "{word}"</span>
+					<Result>No result of "{word}"</Result>
 				) : (
-					<span>Search results of "{word}"</span>
+					<Result>Search results of "{word}"</Result>
 				)}
 
 				{!isLoading
@@ -58,11 +59,34 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
 	width: 80%;
+	min-width: 350px;
 	margin: 0 auto;
 	background-color: black;
 	padding: 20px 50px;
+	cursor: pointer;
 	> span {
 		color: white;
 		font-size: 30px;
+	}
+	@media (max-width: 810px) {
+		width: 95%;
+	}
+`;
+
+const Result = styled.div`
+	color: white;
+	font-size: 25px;
+	margin-top: 50px;
+	padding-top: 50px;
+	border-top: 1px solid white;
+	@media (max-width: 768px) {
+		font-size: 20px;
+		margin-top: 30px;
+		padding-top: 30px;
+	}
+	@media (max-width: 500px) {
+		font-size: 15px;
+		margin-top: 15px;
+		padding-top: 15px;
 	}
 `;

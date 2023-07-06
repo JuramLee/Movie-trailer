@@ -14,10 +14,9 @@ const BasicHeader = () => {
 			<S.GlassBtn
 				onClick={() => {
 					navigate('/search');
-					console.log('클릭');
 				}}
 			>
-				<FontIcons
+				<S.FontIcons
 					icon={faMagnifyingGlass}
 					color="darkgray"
 					cursor="pointer"
@@ -53,12 +52,13 @@ const HeaderWrapper = styled.div`
 		padding: 20px 0;
 	}
 	margin: 0 auto;
-	padding: 20px 0;
+	padding: 20px;
 	color: white;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+	position: relative;
 `;
 
 const HeaderLogo = styled.div`
@@ -83,38 +83,39 @@ const HeaderLogo = styled.div`
 
 const IconContainer = styled.div`
 	display: flex;
-	font-size: 22px;
+	font-size: 21px;
 	font-weight: 700;
 	width: 100%;
 	justify-items: center;
 	align-items: center;
 	text-align: center;
+	padding: 0 15px;
 	div {
 		height: 40px;
 		padding-top: 10px;
 		margin-right: 40px;
 		:hover {
 			cursor: pointer;
-			:hover {
-				border-bottom: 3px solid white;
-			}
+			border-bottom: 3px solid white;
+		}
+		@media (max-width: 535px) {
+			font-size: 15px;
 		}
 	}
 `;
 
 const FontIcons = styled(FontAwesomeIcon)`
 	background-color: white;
-	padding: 5px 15px;
-	border-radius: 20px;
+	padding: 5px 10px;
+	border-radius: 10px;
 `;
 
 const GlassBtn = styled.div`
-	width: 8%;
-	display: flex;
-	justify-content: flex-end;
+	position: absolute;
+	right: 20px;
+	top: 20%;
 	border: none;
 	cursor: pointer;
-	transition: all 0.3s ease;
 `;
 
 const S = {

@@ -4,7 +4,6 @@ import { IMAGE_URL } from 'Consts/URL';
 function DetailInfo({ id }) {
 	const { data: detail } = useDetailInfo(id);
 	const data = detail && detail.data;
-	console.log(detail);
 
 	const IMG_BASE_URL = IMAGE_URL(1280);
 	const integer = detail && data.vote_average.toFixed(2);
@@ -68,6 +67,12 @@ const Backdrop = styled.img`
 	width: 100%;
 	height: 680px;
 	object-fit: cover;
+	@media (max-width: 1000px) {
+		height: 500px;
+	}
+	@media (max-width: 800px) {
+		height: 400px;
+	}
 `;
 
 const BackdropCover = styled.div`
@@ -75,6 +80,12 @@ const BackdropCover = styled.div`
 	height: 680px;
 	background-color: rgba(0, 0, 0, 0.5);
 	position: absolute;
+	@media (max-width: 1000px) {
+		height: 500px;
+	}
+	@media (max-width: 800px) {
+		height: 400px;
+	}
 `;
 
 const DetailTopWrap = styled.div`
@@ -87,6 +98,16 @@ const DetailTopWrap = styled.div`
 const PostImg = styled.img`
 	width: 250px;
 	height: 350px;
+	@media (max-width: 900px) {
+		margin-top: 20px;
+		width: 200px;
+		height: 250px;
+	}
+	@media (max-width: 700px) {
+		margin-top: 50px;
+		width: 150px;
+		height: 200px;
+	}
 `;
 
 const Title = styled.div`
@@ -94,6 +115,14 @@ const Title = styled.div`
 	font-size: 40px;
 	font-weight: bold;
 	color: white;
+	@media (max-width: 900px) {
+		padding: 70px 20px 40px 0;
+		font-size: 30px;
+	}
+	@media (max-width: 700px) {
+		padding: 100px 20px 30px 0;
+		font-size: 25px;
+	}
 `;
 
 const Content = styled.div`
@@ -101,6 +130,18 @@ const Content = styled.div`
 	font-size: 20px;
 	line-height: 30px;
 	color: white;
+	@media (max-width: 900px) {
+		font-size: 15px;
+		line-height: 20px;
+	}
+	@media (max-width: 700px) {
+		font-size: 13px;
+		line-height: 18px;
+	}
+	@media (max-width: 550px) {
+		font-size: 10px;
+		line-height: 13px;
+	}
 `;
 
 const Info = styled.div`
@@ -115,6 +156,17 @@ const ItemContent = styled.div`
 	font-size: 20px;
 	margin-right: 30px;
 	color: gray;
+	@media (max-width: 900px) {
+		font-size: 15px;
+		margin-right: 20px;
+	}
+	@media (max-width: 700px) {
+		font-size: 13px;
+		margin-right: 12px;
+	}
+	@media (max-width: 600px) {
+		margin-right: 5px;
+	}
 `;
 
 const S = {

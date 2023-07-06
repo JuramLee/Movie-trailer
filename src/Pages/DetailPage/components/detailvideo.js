@@ -25,6 +25,12 @@ export default DetailVideo;
 const Iframe = styled.iframe`
 	width: 100vw;
 	height: 600px;
+	@media (max-width: 700px) {
+		height: 400px;
+	}
+	@media (max-width: 500px) {
+		height: 200px;
+	}
 `;
 
 const S = {
