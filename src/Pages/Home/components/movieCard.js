@@ -5,21 +5,28 @@ import {
 	useTopRated,
 	useUpComing,
 } from 'hooks/queries/get-movie-infos';
+import PreviewSkeleton from './Preview/previewSkeleton';
 
 const MoviePreviewCard = () => {
-	const { nowPlaying } = useNowPlaying(1);
-	const { topRated } = useTopRated(1);
-	const { upComing } = useUpComing(1);
+	const { nowPlaying, isLoading: nowLoading } = useNowPlaying(1);
+	const { topRated, isLoading: topLoading } = useTopRated(1);
+	const { upComing, isLoading: upLoading } = useUpComing(1);
 
 	return (
 		<Wrapper>
-			{nowPlaying && (
+			{nowLoading ? (
+				<PreviewSkeleton word={'Now Playing'} />
+			) : (
 				<Preview data={nowPlaying} word={'Now Playing'} nav={'now_playing'} />
 			)}
-			{topRated && (
+			{topLoading ? (
+				<PreviewSkeleton word={'Top Rated'} />
+			) : (
 				<Preview data={topRated} word={'Top Rated'} nav={'top_rated'} />
 			)}
-			{upComing && (
+			{upLoading ? (
+				<PreviewSkeleton word={'Up coming'} />
+			) : (
 				<Preview data={upComing} word={'Up coming'} nav={'upcoming'} />
 			)}
 		</Wrapper>

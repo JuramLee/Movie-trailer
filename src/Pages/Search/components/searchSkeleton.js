@@ -2,34 +2,44 @@ import { Skeleton } from '@mui/material';
 import styled from 'styled-components';
 
 const SearchSkeleton = () => {
-	return Array(4)
+	return Array(3)
 		.fill(0)
 		.map(() => (
 			<Wrapper>
-				<Skeleton
-					variant="rectangular"
-					sx={{
-						width: '230px',
-						height: '300px',
-						bgcolor: '#d9d9d9',
-						marginLeft: '50px',
-						marginRight: '50px',
-						my: '50px',
-					}}
-					animation="wave"
-				/>
-
-				<Skeleton
-					variant="rectangular"
-					sx={{
-						width: '700px',
-						height: '300px',
-						bgcolor: '#d9d9d9',
-						marginRight: '50px',
-						my: '50px',
-					}}
-					animation="wave"
-				/>
+				<Container>
+					<Skeleton
+						variant="rectangular"
+						sx={{
+							width: 200,
+							height: 250,
+							bgcolor: 'grey.500',
+							marginRight: '15px',
+						}}
+						animation="wave"
+					/>
+				</Container>
+				<Container>
+					<Skeleton
+						variant="rectangular"
+						sx={{
+							width: 300,
+							height: 40,
+							bgcolor: 'grey.500',
+							marginBottom: '20px',
+						}}
+						animation="wave"
+					/>
+					<Skeleton
+						variant="rectangular"
+						sx={{
+							width: 550,
+							height: 120,
+							bgcolor: 'grey.500',
+							marginRight: '50px',
+						}}
+						animation="wave"
+					/>
+				</Container>
 			</Wrapper>
 		));
 };
@@ -38,7 +48,14 @@ export default SearchSkeleton;
 const Wrapper = styled.div`
 	display: flex;
 	width: 100%;
-	height: 40vh;
 	border: 1px double grey;
 	border-radius: 25px;
+	margin-top: 30px;
+	align-items: center;
+	padding: 30px;
+`;
+
+const Container = styled.div`
+	display: flex;
+	flex-direction: column;
 `;

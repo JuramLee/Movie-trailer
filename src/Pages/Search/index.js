@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import { useInfiniteSearch } from 'hooks/queries/get-infinite-movieList';
-import SearchBar from 'components/Layout/Header/search';
+import SearchBar from 'components/search';
 
 function SearchPage() {
 	const location = useLocation();
@@ -33,7 +33,6 @@ function SearchPage() {
 				) : (
 					<Result>Search results of "{word}"</Result>
 				)}
-
 				{!isLoading
 					? searchResults &&
 					  searchResults.pages.map(

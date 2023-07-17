@@ -1,37 +1,38 @@
-import MovieCard from 'components/Card/Card';
-import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router';
+import { Skeleton } from '@mui/material';
 
 import styled from 'styled-components';
 import { flexSpaceBetween } from 'Styles/common';
 
-const Preview = ({ data, word, nav }) => {
-	const navigate = useNavigate();
-	const top4 = data.data.results.slice(0, 4);
+const PreviewSkeleton = ({ word }) => {
+	const fake = new Array(4).fill(0);
 
 	return (
 		<S.Wrapper>
 			<S.Bar>
 				<span style={{ color: 'white' }}>{word}</span>
-				<S.Button
-					as={motion.button}
-					whileHover={{ scale: 1.05 }}
-					whileTap={{ scale: 1 }}
-					onClick={() => navigate(`/movie/${nav}`)}
-				>
-					MORE &gt;
-				</S.Button>
+				<S.Button>MORE &gt;</S.Button>
 			</S.Bar>
 			<S.Cards>
-				{top4.map(item => (
-					<MovieCard movie={item} key={item.id} />
+				{fake.map(() => (
+					<Skeleton
+						sx={{
+							width: 230,
+							height: 300,
+							bgcolor: 'grey.500',
+							marginRight: '10px',
+							marginLeft: '10px',
+							my: '10px',
+						}}
+						variant="rectangular"
+						animation="wave"
+					/>
 				))}
 			</S.Cards>
 		</S.Wrapper>
 	);
 };
 
-export default Preview;
+export default PreviewSkeleton;
 
 const Wrapper = styled.div`
 	width: 100%;
@@ -66,7 +67,7 @@ const Bar = styled.div`
 	}
 `;
 
-const Button = styled(motion.button)`
+const Button = styled.button`
 	font-size: 20px;
 	color: white;
 	background: none;

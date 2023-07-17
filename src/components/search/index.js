@@ -30,8 +30,11 @@ export default SearchBar;
 const Form = styled.form`
 	display: flex;
 	flex-direction: row;
-	width: 80%;
+	width: 100%;
+	min-width: 350px;
+	max-width: 1200px;
 	border-radius: 30px;
+	padding: 0 20px;
 	height: 50px;
 	text-align: center;
 	margin: 0 auto;
@@ -66,5 +69,6 @@ const Button = styled.button`
 	}
 	& img {
 		width: 40%;
+		max-width: 20px;
 	}
 `;
