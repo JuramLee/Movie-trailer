@@ -42,10 +42,12 @@ vercel을 이용하여 serverless 배포를 했습니다.
 
 **🖤 디자인 리팩터 화면**
 
-**👈 Before / After 👉**
+**👇 Before**
 
-<img src="https://github.com/JuramLee/Movie-trailer/assets/113501460/88217791-05b5-44f1-a134-36cd84aa6ecf" width="450" height="500"/>
-
-<img src="https://github.com/JuramLee/Movie-trailer/assets/113501460/69861136-37ae-4876-8baf-7a7a6b804568" width="450" height="500"/>
+<img src="https://github.com/JuramLee/Movie-trailer/assets/113501460/88217791-05b5-44f1-a134-36cd84aa6ecf" width="450" height="500"/>   
 
 <br />
+
+**👇 After**
+
+<img src="https://github.com/JuramLee/Movie-trailer/assets/113501460/69861136-37ae-4876-8baf-7a7a6b804568" width="450" height="500"/>   
