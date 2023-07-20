@@ -7,7 +7,7 @@ import { flexSpaceBetween } from 'Styles/common';
 
 const Preview = ({ data, word, nav }) => {
 	const navigate = useNavigate();
-	const top4 = data.data.results.slice(0, 4);
+	const top4 = data?.data.results.slice(0, 4);
 
 	return (
 		<S.Wrapper>

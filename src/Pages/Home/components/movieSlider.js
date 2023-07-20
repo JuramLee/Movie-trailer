@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import MovieSliderSkeleton from './Banner/SliderSkeleton';
 
 const MoviePreviewSlider = () => {
-	const { popular } = usePopular();
+	const { popular, isLoading } = usePopular();
 
 	return (
 		<Wrapper>
-			{popular ? <MovieSlider data={popular} /> : <MovieSliderSkeleton />}
+			{!isLoading ? <MovieSlider data={popular} /> : <MovieSliderSkeleton />}
 		</Wrapper>
 	);
 };
